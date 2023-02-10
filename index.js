@@ -7,6 +7,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const userRoute = require('./routes/v1/users.route');
 const authRoute = require('./routes/v1/auth.route');
+const postRoute = require('./routes/v1/post.route');
 
 mongoose.set('strictQuery', false);
 
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/posts", postRoute);
 
 
 app.listen(8800, () => {
